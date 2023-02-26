@@ -35,6 +35,4 @@ public class RentalLog {
     public String GetTimeOfLog() {
         return _timeOfLog.toString();
     }
-
-
 }
