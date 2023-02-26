@@ -2,6 +2,8 @@ package com.deberain.fowlerRental;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.deberain.RentalLogging.LogDispatcher;
+import com.deberain.RentalLogging.RentalLog;
 
 public class Customer {
 
@@ -18,6 +20,8 @@ public class Customer {
 
     public void addRental(Rental rental) {
         rentals.add(rental);
+        RentalLog log = new RentalLog(this, rental);
+        LogDispatcher.GetDispatcherInstance().onRentalAssignment(log);
     }
 
     public String statement() {
