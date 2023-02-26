@@ -4,14 +4,14 @@ import java.util.Vector;
 
 public class LogDispatcher implements ILogInterceptor {
     private Vector<ILogInterceptor> _interceptors;
-    private static LogDispatcher _dispatcher;
+    private static LogDispatcher _dispatcher = new LogDispatcher();
 
     private LogDispatcher() {
         _interceptors = new Vector<ILogInterceptor>();
     }
 
     public static LogDispatcher GetDispatcherInstance() {
-        return _dispatcher == null ? new LogDispatcher() : _dispatcher;
+        return _dispatcher;
     }
 
     public void RegisterLogInterceptor(ILogInterceptor i) {
