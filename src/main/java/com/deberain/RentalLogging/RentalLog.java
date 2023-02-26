@@ -1,4 +1,7 @@
-package com.deberain.fowlerRental;
+package com.deberain.RentalLogging;
+
+import com.deberain.fowlerRental.Customer;
+import com.deberain.fowlerRental.Rental;
 
 import java.time.LocalDateTime;
 
