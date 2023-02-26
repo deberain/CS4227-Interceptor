@@ -4,6 +4,7 @@ import com.deberain.fowlerRental.Customer;
 import com.deberain.fowlerRental.Rental;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class RentalLog {
     private Customer _customer;
@@ -33,6 +34,7 @@ public class RentalLog {
     }
 
     public String GetTimeOfLog() {
-        return _timeOfLog.toString();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        return _timeOfLog.format(myFormatObj);
     }
 }
